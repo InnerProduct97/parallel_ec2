@@ -1,0 +1,100 @@
+Creating IAM role...
+IAM role created with ARN: arn:aws:iam::356933613987:role/EC2FullAccess
+Creating IAM policy...
+IAM policy created with ARN: arn:aws:iam::356933613987:policy/EC2FullAccess-policy
+Attaching policy to IAM role...
+Policy attached to IAM role
+Creating instance profile...
+Instance profile created with ARN: arn:aws:iam::356933613987:instance-profile/EC2FullAccess
+Adding IAM role to instance profile...
+IAM role added to instance profile
+Creating security group...
+Security group created with ID: sg-04b5896ae590bb217
+Allowing SSH access to security group...
+{
+    "Return": true,
+    "SecurityGroupRules": [
+        {
+            "SecurityGroupRuleId": "sgr-0d07c674d8484db1a",
+            "GroupId": "sg-04b5896ae590bb217",
+            "GroupOwnerId": "356933613987",
+            "IsEgress": false,
+            "IpProtocol": "tcp",
+            "FromPort": 22,
+            "ToPort": 22,
+            "CidrIpv4": "0.0.0.0/0"
+        }
+    ]
+}
+Allowing HTTPS access to security group...
+{
+    "Return": true,
+    "SecurityGroupRules": [
+        {
+            "SecurityGroupRuleId": "sgr-019cac48575114677",
+            "GroupId": "sg-04b5896ae590bb217",
+            "GroupOwnerId": "356933613987",
+            "IsEgress": false,
+            "IpProtocol": "tcp",
+            "FromPort": 443,
+            "ToPort": 443,
+            "CidrIpv4": "0.0.0.0/0"
+        }
+    ]
+}
+Allowing HTTP access to security group...
+{
+    "Return": true,
+    "SecurityGroupRules": [
+        {
+            "SecurityGroupRuleId": "sgr-0dae34dadf1ca69fa",
+            "GroupId": "sg-04b5896ae590bb217",
+            "GroupOwnerId": "356933613987",
+            "IsEgress": false,
+            "IpProtocol": "tcp",
+            "FromPort": 80,
+            "ToPort": 80,
+            "CidrIpv4": "0.0.0.0/0"
+        }
+    ]
+}
+Security group created with ID: sg-04b5896ae590bb217
+Downloading PEM key...
+PEM key downloaded to WebServer_Security_PemKEY.pem
+Downloading PEM key For Worker Instance...
+PEM key downloaded to WorkerInstanceKeyPairUpdated.pem
+Creating EC2 instance...
+EC2 instance created with ID: i-09b3c9f11f249eeaf
+Creating Second EC2 instance...
+EC2 instance created with ID: i-017143c3391c05c84
+Waiting for instances to start up...
+Allocating Elastic IP...
+Elastic IP allocated with ID: eipalloc-02b7956788cca236d
+Associating Elastic IP with instance...
+{
+    "AssociationId": "eipassoc-0dd302c78632b729e"
+}
+Elastic IP address created and associated with instance
+Allocating Elastic IP...
+Elastic IP allocated with ID: eipalloc-0a1e2335a1b96d7d7
+Associating Elastic IP with instance...
+{
+    "AssociationId": "eipassoc-0a025d84b38b15745"
+}
+Elastic IP address created and associated with instance
+Instance IP address: 34.194.228.169
+Instance IP address: 54.163.238.242
+Copying deploy script to instance...
+Warning: Permanently added '34.194.228.169' (ED25519) to the list of known hosts.
+deploy.sh                                                                                                                                        100% 2335    14.8KB/s   00:00    
+WorkerInstanceKeyPairUpdated.pem                                                                                                                 100% 1675    10.5KB/s   00:00    
+Running deploy script on instance...
+App is deployed successfully!
+You can access it through the URL:http://34.194.228.169/
+Copying deploy script to instance...
+Warning: Permanently added '54.163.238.242' (ED25519) to the list of known hosts.
+deploy.sh                                                                                                                                        100% 2335    16.1KB/s   00:00    
+WorkerInstanceKeyPairUpdated.pem                                                                                                                 100% 1675    11.0KB/s   00:00    
+Running deploy script on instance...
+App is deployed successfully!
+You can access it through the URL:http://54.163.238.242/
